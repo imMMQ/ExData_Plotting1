@@ -14,6 +14,7 @@ powerdata$Sub_metering_3 <- as.numeric(powerdata$Sub_metering_3, na.rm = TRUE)
 
 subsetdata <- subset(powerdata, Date == "2007-02-01" | Date =="2007-02-02")
 png("plot3.png", width=480, height=480)
+## make a 3-in-1 plot with legend
 plot(subsetdata$TimenDate, subsetdata$Sub_metering_1, col = "black", type = "l", xlab = " ", ylab = "Energy sub metering")
 lines(subsetdata$TimenDate, subsetdata$Sub_metering_2, col = "red")
 lines(subsetdata$TimenDate, subsetdata$Sub_metering_3, col = "blue")
