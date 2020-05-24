@@ -1,6 +1,6 @@
 ## Assumes household_power_consumption.txt file located in your working directory
 ## read the data file
-powerdata <- read.table("household_power_consumption.txt", stringsAsFactors = FALSE, header = TRUE, sep =";")
+powerdata <- read.table("household_power_consumption.txt", stringsAsFactors = FALSE, header = TRUE, sep =";", na.strings = '?')
 ## Create column in the table with date and time merged together, and then conbine the new colum with the whole table
 TimenDate <- strptime(paste(powerdata$Date, powerdata$Time, sep=" "), "%d/%m/%Y %H:%M:%S")
 powerdata <- cbind(powerdata, TimenDate)

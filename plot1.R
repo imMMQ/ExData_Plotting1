@@ -1,6 +1,6 @@
 ## Assumes household_power_consumption.txt file located in your working directory
 ## read the data file
-powerdata <- read.table("household_power_consumption.txt", stringsAsFactors = FALSE, header = TRUE, sep =";")
+powerdata <- read.table("household_power_consumption.txt", stringsAsFactors = FALSE, header = TRUE, sep =";", na.strings = '?')
 ## change class of all columns to correct class
 powerdata$Date <- as.Date(powerdata$Date, format="%d/%m/%Y")
 powerdata$Time <- format(powerdata$Time, format="%H:%M:%S")
